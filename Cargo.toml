@@ -1,6 +1,6 @@
 [package]
 name = "cirious_codex_cli"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Cirious Studio <cirious.studio@proton.me>"]
 edition = "2021"
 license = "MIT OR Apache-2.0"
@@ -18,7 +18,7 @@ missing_docs = "warn"
 
 [dependencies]
 cirious_codex_logger = "0.1.0"
-cirious_codex_config = {version = "0.1.0", features = ["full"], optional = true}
+cirious_codex_config = { version = "0.1.0", optional = true, default-features = false }
 
 clap = { version = "4.5", features = ["derive"] }
 serde = { version = "1.0", features = ["derive"] }
@@ -26,8 +26,17 @@ serde = { version = "1.0", features = ["derive"] }
 
 [features]
 default = ["config"]
+cli = []
 config = ["cirious_codex_config"]
-config_json = []
 config_toml = ["cirious_codex_config/toml"]
 config_yaml = ["cirious_codex_config/yaml"]
-config_full = ["cirious_codex_config/full"]
+config_term = ["cirious_codex_config/term"]
+config_logger = ["cirious_codex_config/logger"]
+
+full = [
+  "config",
+  "config_toml",
+  "config_yaml",
+  "config_term",
+  "config_logger"
+]

@@ -86,9 +86,9 @@ where
       #[cfg(feature = "config_yaml")]
       Some("yaml") | Some("yml") => ConfigFormat::Yaml,
       #[cfg(feature = "config")]
-      Some("ron") => ConfigFormat::Ron,
       Some("json") => ConfigFormat::Json,
-      _ => panic!("Unsupported config extension or missing feature flag (e.g., config_json)"),
+      Some("ron") => ConfigFormat::Ron,
+      _ => panic!("Unsupported config extension or missing feature flag (e.g., config_toml, config_yaml)"),
     };
 
     let cfg = ConfigBuilder::new()

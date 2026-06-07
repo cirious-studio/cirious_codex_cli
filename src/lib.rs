@@ -57,4 +57,7 @@
 /// global flags and bootstrap the application.
 pub mod args;
 
-pub use args::{execute_cli, execute_cli_with_config, CodexCommand, GlobalArgs};
+#[cfg(feature = "config")]
+pub use args::execute_cli_with_config;
+
+pub use args::{execute_cli, CodexCommand, GlobalArgs};
