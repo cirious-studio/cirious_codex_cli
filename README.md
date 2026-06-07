@@ -2,9 +2,10 @@
 
 # 🚀 Cirious Codex CLI
 
-**Rapid Command Line Application Scaffolding for the Cirious Ecosystem**
+# ⚠️ YANKED VERSION (DO NOT USE)
+This version (`v0.1.0`) has been marked as *yanked* on crates.io due to a critical bug in the propagation of configuration resources.
 
-[![CI](https://github.com/cirious-studio/cirious_codex_cli/actions/workflows/ci.yml/badge.svg)](https://github.com/cirious-studio/cirious_codex_cli/actions/workflows/ci.yml) [![Crates.io](https://img.shields.io/crates/v/cirious_codex_cli.svg)](https://crates.io/crates/cirious_codex_cli) [![Docs.rs](https://docs.rs/cirious_codex_cli/badge.svg)](https://docs.rs/cirious_codex_cli) [![Language](https://img.shields.io/badge/Language-Rust-black?logo=rust)](https://www.rust-lang.org/) [![License](https://img.shields.io/badge/License-MIT%2FApache-blue.svg)](#-license)
+**Please use version [v0.1.1](https://github.com/cirious-foundation/cirious_codex_cli/releases/tag/v0.1.1) or higher.**
 
 </div>
 
@@ -34,7 +35,8 @@ Add the following to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-cirious_codex_cli = "0.1.0"
+# Use the stable 0.1.1 version instead of the yanked 0.1.0
+cirious_codex_cli = "0.1.1"
 clap = { version = "4.5", features = ["derive"] }
 serde = { version = "1.0", features = ["derive"] }
 ```
@@ -198,13 +200,13 @@ cargo run --example 02_robust_microservice -- --verbose --config examples/resour
 - [x] Implement automatic initialization of `cirious_codex_logger` dispatchers based on CLI flags.
 - [x] Implement automated configuration loading bridging with `cirious_codex_config`.
 - [x] Create robust examples demonstrating rapid application scaffolding.
+- [x] Publish `cirious_codex_cli` to `crates.io` as a standalone crate.
 
 ### 🔭 v0.2.0 — Planned
 
 - [ ] Add a global `init_cli!` macro for zero-boilerplate entrypoints.
 - [ ] Implement a `Result`-aware handler variant (`execute_cli_result`) that integrates with `CodexError`.
 - [ ] Add support for `APP_*` environment variable overrides via `cirious_codex_config`'s env prefix API.
-- [ ] Publish `cirious_codex_cli` to `crates.io` as a standalone crate.
 
 ---
 
